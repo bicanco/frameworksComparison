@@ -13,3 +13,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ```
 yarn create next-app --ts
 ```
+
+### 1. The Hero Editor
+* Creating the function component `Heroes`;
+* Displaying the `Heroes` component by adding it to the `App` component declared in the `index.tsx`;
+* Using a auxiliary function `uppercase` to format the name;
+* Binding the component's value and state to control the form;

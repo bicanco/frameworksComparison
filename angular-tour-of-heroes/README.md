@@ -15,3 +15,11 @@ ng new angular-tour-of-heroes --commit=false --minimal=true --package-manager=ya
 cd angular-tour-of-heroes
 ng add @angular-eslint/schematics
 ```
+
+### 1. The Hero Editor
+* Using the CLI to create `HeroesComponent`;
+* Displaying the `HeroesComponent` by adding it to the `AppComponent`;
+* Applying the `UppercasePipe` to format the name;
+* Using two-way data binding with `ngModel` directive;
+* Adding the `FormsModule` to the `AppModule` in order to recognize the `ngModel` directive;
+* Reviewing the declaration of components in the `AppModule`.

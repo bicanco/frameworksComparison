@@ -6,10 +6,10 @@ For the purpose of this comparison, the tour of heroes tutorial, available at [a
 The steps followed in each framework are documented in their respective folders.
 
 ## Angular:
-* [Setup](https://github.com/bicanco/frameworksComparison/angular-tour-of-heroes#initial-setup)
+* [Setup](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#initial-setup)
 
 ## Nextjs:
-* [Setup](https://github.com/bicanco/frameworksComparison/nextjs-tour-of-heroes#initial-setup)
+* [Setup](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#initial-setup)
 
 ## Vue:
-* [Setup](https://github.com/bicanco/frameworksComparison/vue-tour-of-heroes#initial-setup)
+* [Setup](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#initial-setup)

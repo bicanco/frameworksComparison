@@ -23,3 +23,9 @@ ng add @angular-eslint/schematics
 * Using two-way data binding with `ngModel` directive;
 * Adding the `FormsModule` to the `AppModule` in order to recognize the `ngModel` directive;
 * Reviewing the declaration of components in the `AppModule`.
+
+### 2. Display a List
+* Displaying a list of heroes with the `*ngFor` directive;
+* Binding the `(click)` event;
+* Condicionaly displaying the hero's details, if one is selected, using the `*ngIf` directive;
+* Binding css classes using the `[class]` binding.

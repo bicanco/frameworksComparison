@@ -20,3 +20,9 @@ vue create vue-tour-of-heroes
 * Applying the `uppercase` global filter to format the name;
 * Using two-way data binding with `v-model` directive;
 * Reviewing the declaration of components in the `App` component.
+
+### 2. Display a List
+* Displaying a list of heroes with the `v-for` directive and binding the `:key`;
+* Binding the `@click` event;
+* Condicionaly displaying the hero's details, if one is selected, using the `v-if` directive;
+* Binding css classes with the `:class` binding.

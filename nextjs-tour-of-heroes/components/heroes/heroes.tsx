@@ -1,27 +1,63 @@
+import classNames from 'classNames';
 import { FunctionComponent, useState } from 'react';
 
 import { Hero } from '../../models/hero';
 import { uppercase } from '../../utils/uppercase';
+import { HEROES } from '../mock-heroes';
 import styles from './Heroes.module.scss';
 
 const Heroes: FunctionComponent = () => {
-  const [hero, setHero] = useState<Hero>({
-    id: 1,
-    name: 'Windstorm',
-  });
+  const [heroes, setHeroes] = useState<Hero[]>(HEROES);
+  const [selectedHero, setSelectedHero] = useState<Hero>();
+
+  const onSelect = (hero: Hero): void => {
+    setSelectedHero(hero);
+  }
+
+  const handleChange = (name: string): void => {
+    const index = heroes.indexOf(selectedHero!);
+    const newHero = {...selectedHero!, name};
+    const newArray = [...heroes];
+    newArray[index] = newHero;
+    setHeroes(newArray);
+    setSelectedHero(newHero);
+  }
 
   return (<>
-    <h2>{uppercase(hero.name)} Details</h2>
-    <div><span>id: </span>{hero.id}</div>
-    <div>
-      <label htmlFor="name">Hero name: </label>
-      <input
-        id="name"
-        value={hero.name}
-        onChange={(event) => setHero({...hero, name: event.target.value})}
-        placeholder="name"
-      />
-    </div>
+    <h2>My Heroes</h2>
+    <ul className={styles.heroes}>
+      {heroes.map((hero) =>
+        <li
+          key={hero.id}
+          onClick={() => onSelect(hero)}
+          className={classNames(
+            {[styles.selected]: hero === selectedHero}
+          )}
+        >
+          <span className={styles.badge}>{hero.id}</span> {hero.name}
+        </li>
+      )}
+    </ul>
+
+    { selectedHero! &&
+      <div>
+
+        <h2>{uppercase(selectedHero.name)} Details</h2>
+        <div><span>id: </span>{selectedHero.id}</div>
+        <div>
+          <label htmlFor="name">Hero name: </label>
+          <input
+            id="name"
+            className={styles.input}
+            value={selectedHero.name}
+            onChange={(event) => handleChange(event.target.value)}
+            placeholder="name"
+          />
+        </div>
+
+      </div>
+    }
+
   </>);
 }
 

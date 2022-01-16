@@ -19,3 +19,9 @@ yarn create next-app --ts
 * Displaying the `Heroes` component by adding it to the `App` component declared in the `index.tsx`;
 * Using a auxiliary function `uppercase` to format the name;
 * Binding the component's value and state to control the form;
+
+### 2. Display a List
+* Displaying a list of heroes by mapping an array and binding the `key`;
+* Binding the `onClick` event;
+* Condicionaly displaying the hero's details, if one is selected, using the `&&` operator;
+* Binding css classes, using the `classnames` library to simplify the code.

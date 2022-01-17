@@ -29,3 +29,8 @@ ng add @angular-eslint/schematics
 * Binding the `(click)` event;
 * Condicionaly displaying the hero's details, if one is selected, using the `*ngIf` directive;
 * Binding css classes using the `[class]` binding.
+
+### 3. Create a Feature Component
+* Creating a reusable `HeroDetailComponent`;
+* Using property binding to controls the child `HeroDetailComponent` from parent `HeroesComponent`;
+* Using `@Input` decorator to expose the `hero` property for binding by the external `HeroesComponent`.

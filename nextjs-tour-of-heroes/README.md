@@ -25,3 +25,9 @@ yarn create next-app --ts
 * Binding the `onClick` event;
 * Condicionaly displaying the hero's details, if one is selected, using the `&&` operator;
 * Binding css classes, using the `classnames` library to simplify the code.
+
+### 3. Create a Feature Component
+* Creating a reusable `HeroDetail` component;
+* Using props binding to controls the child `HeroDetail` component from parent `Heroes` component;
+* Using a interface to type the exposed props for binding by the external `Heroes` component.
+

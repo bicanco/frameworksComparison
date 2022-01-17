@@ -2,7 +2,7 @@ import classNames from 'classNames';
 import { FunctionComponent, useState } from 'react';
 
 import { Hero } from '../../models/hero';
-import { uppercase } from '../../utils/uppercase';
+import HeroDetail from '../hero-detail/hero-detail';
 import { HEROES } from '../mock-heroes';
 import styles from './Heroes.module.scss';
 
@@ -39,25 +39,7 @@ const Heroes: FunctionComponent = () => {
       )}
     </ul>
 
-    { selectedHero! &&
-      <div>
-
-        <h2>{uppercase(selectedHero.name)} Details</h2>
-        <div><span>id: </span>{selectedHero.id}</div>
-        <div>
-          <label htmlFor="name">Hero name: </label>
-          <input
-            id="name"
-            className={styles.input}
-            value={selectedHero.name}
-            onChange={(event) => handleChange(event.target.value)}
-            placeholder="name"
-          />
-        </div>
-
-      </div>
-    }
-
+    <HeroDetail hero={selectedHero} handleChange={handleChange} />
   </>);
 }
 

@@ -12,24 +12,21 @@
       </li>
     </ul>
 
-    <div v-if="selectedHero">
-      <h2>{{ $filters.uppercase(selectedHero.name) }} Details</h2>
-      <div><span>id: </span>{{ selectedHero.id }}</div>
-      <div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" v-model="selectedHero.name" placeholder="name" />
-      </div>
-    </div>
+    <HeroDetail :hero="selectedHero" />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
+import HeroDetail from "./Hero-detail.vue";
 import { HEROES } from "../mock-heroes";
 import { Hero } from "../models/hero";
 
 @Options({
+  components: {
+    HeroDetail,
+  },
   data: () => ({
     heroes: HEROES,
     selectedHero: undefined,
@@ -91,9 +88,5 @@ export default class Heroes extends Vue {}
   height: 1.8em;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
-}
-
-input {
-  padding: 0.5rem;
 }
 </style>

@@ -26,3 +26,8 @@ vue create vue-tour-of-heroes
 * Binding the `@click` event;
 * Condicionaly displaying the hero's details, if one is selected, using the `v-if` directive;
 * Binding css classes with the `:class` binding.
+
+### 3. Create a Feature Component
+* Creating a reusable `HeroDetail` component;
+* Using `props` binding to controls the child `HeroDetail` component from parent `Heroes` component;
+* Using `props` property in the `@Options` decorator to access the `hero` property bound in the external `Heroes` component.

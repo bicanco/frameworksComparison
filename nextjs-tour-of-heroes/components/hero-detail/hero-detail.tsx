@@ -1,7 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import { Hero } from '../../models/hero';
-import { uppercase } from '../../utils/uppercase';
+import { Hero } from '@models/hero';
+import { uppercase } from '@utils/uppercase';
+
 import styles from './Hero-detail.module.scss';
 
 interface Props {

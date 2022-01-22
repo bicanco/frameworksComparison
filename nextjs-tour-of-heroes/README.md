@@ -31,3 +31,12 @@ yarn create next-app --ts
 * Using props binding to controls the child `HeroDetail` component from parent `Heroes` component;
 * Using a interface to type the exposed props for binding by the external `Heroes` component.
 
+### 4. Add Services
+* Refactoring data access to `useHeroService` hook;
+* Using RxJS `of()` to return a `Observable` and mock an asynchronous call;
+* Using the `useEffect` hook to call the `HeroService`'s method;
+* Returning a state in the `useHeroService` to prevente `useEffect` triggering again;
+* Creating a `MessageService` store for loosely-coupled communication using the `react-redux` library;
+* Creating `useAppDispatch` and `useAppSelector` hooks for using typed versions of the `useDispatch` and `useSelector` hooks;
+* Using the `useAppDispatch` to interact with the `MessageService` storage;
+* Using the `useMessageService` hook to acess the `MessageService` store`s state in the `Messages` component.

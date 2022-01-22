@@ -2,21 +2,39 @@
   <div>
     <h1>{{ title }}</h1>
     <Heroes />
+    <Messages />
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { HeroService } from "@/services/hero-service";
+import { defineComponent, provide, ref } from "vue";
+import { getModule } from "vuex-module-decorators";
 import Heroes from "./components/Heroes.vue";
+import Messages from "./components/Messages.vue";
+import { MessageService } from "@/store/message-service";
+import { store } from "@/store";
+import { keys } from "@/keys";
 
-@Options({
+export default defineComponent({
+  setup() {
+    const messageService = getModule(MessageService, store);
+    const heroService = new HeroService(messageService);
+
+    provide(keys.messageServiceKey, messageService);
+    provide(keys.heroServiceKey, heroService);
+
+    const title = ref("Tour of Heroes");
+
+    return {
+      title,
+    };
+  },
   components: {
     Heroes,
+    Messages,
   },
-})
-export default class App extends Vue {
-  title = "Tour of Heroes";
-}
+});
 </script>
 
 <style lang="scss">

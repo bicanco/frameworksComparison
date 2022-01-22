@@ -31,3 +31,12 @@ vue create vue-tour-of-heroes
 * Creating a reusable `HeroDetail` component;
 * Using `props` binding to controls the child `HeroDetail` component from parent `Heroes` component;
 * Using `props` property in the `@Options` decorator to access the `hero` property bound in the external `Heroes` component.
+
+### 4. Add Services
+* Refactoring data access to `HeroService` class;
+* Using RxJS `of()` to return a `Observable` and mock an asynchronous call;
+* Using the `provide()/inject()` functions to use the `HeroService` in the components;
+* Calling the `HeroService`'s method in the component `setup()` function;
+* Creating a `MessageService` store for loosely-coupled communication using the `vuex` and `vuex-module-decorators` libraries;
+* Using the `useModule()` and `inject()` functions to inject the `MessageService` storage for further interaction;
+* Passing the `MessageService` to the `HeroService` using the latter's constructor.

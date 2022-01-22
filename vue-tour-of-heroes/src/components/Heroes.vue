@@ -17,27 +17,47 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-
 import HeroDetail from "./Hero-detail.vue";
-import { HEROES } from "../mock-heroes";
-import { Hero } from "../models/hero";
+import { tap } from "rxjs";
+import { defineComponent, inject, ref } from "vue";
+import { Hero } from "@/models/hero";
+import { keys } from "@/keys";
+import { HeroService } from "@/services/hero-service";
+import { MessageService } from "@/store/message-service";
 
-@Options({
+export default defineComponent({
   components: {
     HeroDetail,
   },
-  data: () => ({
-    heroes: HEROES,
-    selectedHero: undefined,
-  }),
-  methods: {
-    onSelect(hero: Hero): void {
-      this.selectedHero = hero;
-    },
+  setup() {
+    const heroService = inject(keys.heroServiceKey) as HeroService;
+    const messageService = inject(keys.messageServiceKey) as MessageService;
+
+    const heroes = ref<Hero[]>([]);
+    const selectedHero = ref<Hero>();
+
+    const getHeroes = (): void => {
+      heroService
+        .getHeroes()
+        .pipe(tap((HEROES) => (heroes.value = HEROES)))
+        .subscribe();
+    };
+
+    const onSelect = (hero: Hero): void => {
+      selectedHero.value = hero;
+      messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+    };
+
+    getHeroes();
+
+    return {
+      heroes,
+      selectedHero,
+      getHeroes,
+      onSelect,
+    };
   },
-})
-export default class Heroes extends Vue {}
+});
 </script>
 
 <style lang="scss" scoped>

@@ -34,3 +34,12 @@ ng add @angular-eslint/schematics
 * Creating a reusable `HeroDetailComponent`;
 * Using property binding to controls the child `HeroDetailComponent` from parent `HeroesComponent`;
 * Using `@Input` decorator to expose the `hero` property for binding by the external `HeroesComponent`.
+
+### 4. Add Services
+* Refactoring data access to `HeroService` class;
+* Registering `HeroService` as a provider in the root level;
+* Using Angular Dependency Injection to inject the service into the component;
+* Using RxJS `of()` to return a `Observable` and mock an asynchronous call;
+* Using the `ngOnInit` lifecycle to call the `HeroService`'s method;
+* Creating a `MessageService` for loosely-coupled communication;
+* Injecting the `MessageService` into the `HeroService`.

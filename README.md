@@ -10,15 +10,18 @@ The steps followed in each framework are documented in their respective folders.
 * [1. The Hero Editor](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#1-the-hero-editor)
 * [2. Display a List](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#2-display-a-list)
 * [3. Create a Feature Component](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#3-create-a-feature-component)
+* [4. Add Services](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#4-add-services)
 
 ## Nextjs:
 * [Initial Setup](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#initial-setup)
 * [1. The Hero Editor](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#1-the-hero-editor)
 * [2. Display a List](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#2-display-a-list)
 * [3. Create a Feature Component](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#3-create-a-feature-component)
+* [4. Add Services](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#4-add-services)
 
 ## Vue:
 * [Initial Setup](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#initial-setup)
 * [1. The Hero Editor](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#1-the-hero-editor)
 * [2. Display a List](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#2-display-a-list)
 * [3. Create a Feature Component](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#3-create-a-feature-component)
+* [4. Add Services](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#4-add-services)

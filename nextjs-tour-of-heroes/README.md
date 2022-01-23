@@ -40,3 +40,13 @@ yarn create next-app --ts
 * Creating `useAppDispatch` and `useAppSelector` hooks for using typed versions of the `useDispatch` and `useSelector` hooks;
 * Using the `useAppDispatch` to interact with the `MessageService` storage;
 * Using the `useMessageService` hook to acess the `MessageService` store`s state in the `Messages` component.
+
+### 5. Add Navigation
+* Creating a navigation shell using into the `App` altering the `_app.tsx` file;
+* Configuring the routes by creating `index.tsx` files in subfolders in the `pages` folder;
+* Adding a `[id].tsx` file to create a parameterized route;
+* Altering the `next.config.js` to redirect a route;
+* Using the `Link` component around anchor elements;
+* Refactoring a tightly-coupled master/detail view into a routed detail view;
+* Using `Link` component props to navigate;
+* Using the `useHeroService` hook in multiple components.

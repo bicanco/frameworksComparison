@@ -16,5 +16,11 @@ export const useHeroService = () => {
     return heroes;
   };
 
-  return useState({getHeroes})[0];
+  const getHero = (id: number): Observable<Hero> => {
+    const hero = HEROES.find(h => h.id === id)!;
+    dispatch(MSA.add(`HeroService: fetched hero id=${id}`));
+    return of(hero);
+  }
+
+  return useState({getHeroes, getHero})[0];
 }

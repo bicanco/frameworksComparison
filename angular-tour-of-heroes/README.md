@@ -43,3 +43,13 @@ ng add @angular-eslint/schematics
 * Using the `ngOnInit` lifecycle to call the `HeroService`'s method;
 * Creating a `MessageService` for loosely-coupled communication;
 * Injecting the `MessageService` into the `HeroService`.
+
+### 5. Add Navigation
+* Adding the Angular router to navigate among different pages;
+* Turning the `AppComponent` into a navigation shell using `<a>` links and the `<router-outlet>`;
+* Configuring the `AppRoutingModule`;
+* Defining routes, a redirect route and a parameterized route;
+* Using the `routerLink` directive in anchor elements;
+* Refactoring a tightly-coupled master/detail view into a routed detail view;
+* Using router link paramenters to navigate;
+* Using the `HeroService` in multiple components.

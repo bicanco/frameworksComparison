@@ -40,3 +40,13 @@ vue create vue-tour-of-heroes
 * Creating a `MessageService` store for loosely-coupled communication using the `vuex` and `vuex-module-decorators` libraries;
 * Using the `useModule()` and `inject()` functions to inject the `MessageService` storage for further interaction;
 * Passing the `MessageService` to the `HeroService` using the latter's constructor.
+
+### 5. Add Navigation
+* Add the `vue-router` library to navigate among different pages;
+* Turning the `App` components into a navigation shell using `<router-link>` and the `<router-view>`;
+* Configuring the `routes.ts` file;
+* Defining routes, a redirect route and a parameterized route;
+* Using the `<router-link>` components instead of anchor elements;
+* Refactoring a tightly-coupled master/detail view into a routed detail view;
+* Using `<router-link>` props to navigate;
+* Using the `HeroService` in multiple components.

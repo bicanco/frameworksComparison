@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-    <Heroes />
-    <Messages />
-  </div>
+  <h1>{{ title }}</h1>
+  <nav>
+    <router-link to="/dashboard">Dashboard</router-link>
+    <router-link to="/heroes">Heroes</router-link>
+  </nav>
+  <router-view></router-view>
+  <Messages />
 </template>
 
 <script lang="ts">
 import { HeroService } from "@/services/hero-service";
 import { defineComponent, provide, ref } from "vue";
 import { getModule } from "vuex-module-decorators";
-import Heroes from "./components/Heroes.vue";
 import Messages from "./components/Messages.vue";
 import { MessageService } from "@/store/message-service";
 import { store } from "@/store";
@@ -31,7 +32,6 @@ export default defineComponent({
     };
   },
   components: {
-    Heroes,
     Messages,
   },
 });
@@ -65,4 +65,26 @@ button {
 }
 </style>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+/* AppComponent's private CSS styles */
+h1 {
+  margin-bottom: 0;
+}
+nav a {
+  padding: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color: #42545c;
+}
+nav a.active {
+  background-color: black;
+}
+</style>

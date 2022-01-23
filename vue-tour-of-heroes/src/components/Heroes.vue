@@ -1,40 +1,25 @@
 <template>
-  <div>
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-      <li
-        v-for="hero in heroes"
-        :key="hero.id"
-        :class="{ selected: hero === selectedHero }"
-        @click="onSelect(hero)"
-      >
+  <h2>My Heroes</h2>
+  <ul class="heroes">
+    <li v-for="hero in heroes" :key="hero.id">
+      <router-link :to="`/detail/${hero.id}`">
         <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-      </li>
-    </ul>
-
-    <HeroDetail :hero="selectedHero" />
-  </div>
+      </router-link>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
-import HeroDetail from "./Hero-detail.vue";
 import { tap } from "rxjs";
 import { defineComponent, inject, ref } from "vue";
 import { Hero } from "@/models/hero";
 import { keys } from "@/keys";
 import { HeroService } from "@/services/hero-service";
-import { MessageService } from "@/store/message-service";
 
 export default defineComponent({
-  components: {
-    HeroDetail,
-  },
   setup() {
     const heroService = inject(keys.heroServiceKey) as HeroService;
-    const messageService = inject(keys.messageServiceKey) as MessageService;
-
     const heroes = ref<Hero[]>([]);
-    const selectedHero = ref<Hero>();
 
     const getHeroes = (): void => {
       heroService
@@ -43,18 +28,11 @@ export default defineComponent({
         .subscribe();
     };
 
-    const onSelect = (hero: Hero): void => {
-      selectedHero.value = hero;
-      messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-    };
-
     getHeroes();
 
     return {
       heroes,
-      selectedHero,
       getHeroes,
-      onSelect,
     };
   },
 });
@@ -69,32 +47,36 @@ export default defineComponent({
   width: 15em;
 }
 .heroes li {
-  cursor: pointer;
   position: relative;
-  left: 0;
+  cursor: pointer;
+}
+
+.heroes li:hover {
+  left: 0.1em;
+}
+
+.heroes a {
+  color: #333;
+  text-decoration: none;
   background-color: #eee;
   margin: 0.5em;
   padding: 0.3em 0;
   height: 1.6em;
   border-radius: 4px;
+  display: block;
+  width: 100%;
 }
-.heroes li:hover {
+
+.heroes a:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
-  left: 0.1em;
 }
-.heroes li.selected {
-  background-color: black;
-  color: white;
+
+.heroes a:active {
+  background-color: #525252;
+  color: #fafafa;
 }
-.heroes li.selected:hover {
-  background-color: #505050;
-  color: white;
-}
-.heroes li.selected:active {
-  background-color: black;
-  color: white;
-}
+
 .heroes .badge {
   display: inline-block;
   font-size: small;
@@ -106,6 +88,8 @@ export default defineComponent({
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
 }

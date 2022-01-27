@@ -12,6 +12,7 @@ The steps followed in each framework are documented in their respective folders.
 * [3. Create a Feature Component](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#3-create-a-feature-component)
 * [4. Add Services](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#4-add-services)
 * [5. Add Navigation](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#5-add-navigation)
+* [6. Get Data from a Server](https://github.com/bicanco/frameworksComparison/tree/main/angular-tour-of-heroes#6-get-data-from-a-server)
 
 ## Nextjs:
 * [Initial Setup](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#initial-setup)
@@ -20,6 +21,7 @@ The steps followed in each framework are documented in their respective folders.
 * [3. Create a Feature Component](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#3-create-a-feature-component)
 * [4. Add Services](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#4-add-services)
 * [5. Add Navigation](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#5-add-navigation)
+* [6. Get Data from a Server](https://github.com/bicanco/frameworksComparison/tree/main/nextjs-tour-of-heroes#6-get-data-from-a-server)
 
 ## Vue:
 * [Initial Setup](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#initial-setup)
@@ -28,3 +30,4 @@ The steps followed in each framework are documented in their respective folders.
 * [3. Create a Feature Component](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#3-create-a-feature-component)
 * [4. Add Services](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#4-add-services)
 * [5. Add Navigation](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#5-add-navigation)
+* [6. Get Data from a Server](https://github.com/bicanco/frameworksComparison/tree/main/vue-tour-of-heroes#6-get-data-from-a-server)

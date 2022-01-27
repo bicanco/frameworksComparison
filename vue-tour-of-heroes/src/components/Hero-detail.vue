@@ -7,6 +7,7 @@
       <input id="hero-name" v-model="hero.name" placeholder="Hero name" />
     </div>
     <button @click="goBack()">go back</button>
+    <button @click="save()">save</button>
   </div>
 </template>
 
@@ -39,6 +40,15 @@ export default defineComponent({
       router.back();
     };
 
+    const save = (): void => {
+      if (hero.value) {
+        heroService
+          .updateHero(hero.value)
+          .pipe(tap(() => goBack()))
+          .subscribe();
+      }
+    };
+
     getHero();
 
     return {
@@ -46,6 +56,7 @@ export default defineComponent({
       heroName,
       getHero,
       goBack,
+      save,
     };
   },
 });

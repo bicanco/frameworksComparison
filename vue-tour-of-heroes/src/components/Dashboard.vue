@@ -9,6 +9,8 @@
       {{ hero.name }}
     </router-link>
   </div>
+
+  <HeroSearch />
 </template>
 
 <script lang="ts">
@@ -16,8 +18,12 @@ import { Hero } from "@/models/hero";
 import { HeroService, heroServiceKey } from "@/services/hero-service";
 import { tap } from "rxjs";
 import { defineComponent, inject, ref } from "vue";
+import HeroSearch from "@/components/Hero-search.vue";
 
 export default defineComponent({
+  components: {
+    HeroSearch,
+  },
   setup() {
     const heroService = inject(heroServiceKey) as HeroService;
     const heroes = ref<Hero[]>([]);

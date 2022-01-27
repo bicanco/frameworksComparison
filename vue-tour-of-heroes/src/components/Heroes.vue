@@ -1,10 +1,30 @@
 <template>
   <h2>My Heroes</h2>
+
+  <div>
+    <label for="new-hero">Hero name: </label>
+    <input id="new-hero" v-model="heroName" />
+
+    <button
+      class="add-button"
+      @click="
+        add(heroName);
+        heroName = '';
+      "
+    >
+      Add hero
+    </button>
+  </div>
+
   <ul class="heroes">
     <li v-for="hero in heroes" :key="hero.id">
       <router-link :to="`/detail/${hero.id}`">
         <span class="badge">{{ hero.id }}</span> {{ hero.name }}
       </router-link>
+
+      <button class="delete" title="delete hero" @click="deleteHero(hero)">
+        x
+      </button>
     </li>
   </ul>
 </template>
@@ -18,6 +38,7 @@ import { HeroService } from "@/services/hero-service";
 
 export default defineComponent({
   setup() {
+    const heroName = ref<string>("");
     const heroService = inject(keys.heroServiceKey) as HeroService;
     const heroes = ref<Hero[]>([]);
 
@@ -28,11 +49,30 @@ export default defineComponent({
         .subscribe();
     };
 
+    const add = (name: string): void => {
+      name = name.trim();
+      if (!name) {
+        return;
+      }
+      heroService
+        .addHero({ name } as Hero)
+        .pipe(tap((hero) => heroes.value.push(hero)))
+        .subscribe();
+    };
+
+    const deleteHero = (hero: Hero): void => {
+      heroes.value = heroes.value.filter((h) => h !== hero);
+      heroService.deleteHero(hero.id).subscribe();
+    };
+
     getHeroes();
 
     return {
       heroes,
       getHeroes,
+      add,
+      heroName,
+      deleteHero,
     };
   },
 });
@@ -46,6 +86,15 @@ export default defineComponent({
   padding: 0;
   width: 15em;
 }
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
 .heroes li {
   position: relative;
   cursor: pointer;
@@ -92,5 +141,31 @@ export default defineComponent({
   text-align: right;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
+}
+
+.add-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #42545c;
+}
+
+button.delete {
+  position: absolute;
+  left: 210px;
+  top: 5px;
+  background-color: white;
+  color: #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 3px 10px;
+}
+
+button.delete:hover {
+  background-color: #525252;
+  color: white;
 }
 </style>

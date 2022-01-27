@@ -8,6 +8,9 @@ yarn install
 ### Serve
 Run `yarn serve` and navigate to `http://localhost:8080/`.
 
+### Run json server
+Run `yarn run db`. The resources are available at `http://localhost:4000`.
+
 ### Initial Setup
 Project created with [Vue CLI](https://cli.vuejs.org/) using the following command:
 ```
@@ -50,3 +53,10 @@ vue create vue-tour-of-heroes
 * Refactoring a tightly-coupled master/detail view into a routed detail view;
 * Using `<router-link>` props to navigate;
 * Using the `HeroService` in multiple components.
+
+### 6. Get Data from a Server
+* Instaling the `axios` library to make HTTP requests in the app;
+* Refactoring the `HeroService` to load heroes from a web API;
+* Extending the `HeroService` to support `post()`, `put()` and `delete()` methods;
+* Updating the components to allow adding, editing and deleting heroes.
+

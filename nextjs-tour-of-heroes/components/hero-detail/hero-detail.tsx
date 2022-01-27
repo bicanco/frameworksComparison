@@ -3,7 +3,6 @@ import { FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { tap } from 'rxjs';
 
 import { useHeroService } from '@hooks/hero-service';
-import { HEROES } from '@hooks/mock-heroes';
 import { Hero } from '@models/hero';
 import { uppercase } from '@utils/uppercase';
 
@@ -30,9 +29,15 @@ const HeroDetail: FunctionComponent = () => {
     router.back();
   }
 
+  const save = (): void => {
+    if (hero) {
+      heroService.updateHero(hero).pipe(
+        tap(goBack),
+      ).subscribe();
+    }
+  }
+
   const handleChange = (name: string): void => {
-    const newState = {...hero!, name};
-    HEROES[HEROES.findIndex(item => item.id === hero?.id)] = newState;
     setHero({...hero!, name});
   }
 
@@ -58,6 +63,7 @@ const HeroDetail: FunctionComponent = () => {
         </div>
 
         <button className={styles.button} onClick={goBack}>go back</button>
+        <button className={styles.button} onClick={save}>save</button>
       </div>
     }
   </>);

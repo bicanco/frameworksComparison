@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { map, tap } from 'rxjs';
 
+import HeroSearch from '@components/hero-search/hero-search';
 import { useHeroService } from '@hooks/hero-service';
 import { Hero } from '@models/hero';
 
@@ -33,6 +34,8 @@ const Dashboard: FunctionComponent = () => {
         </Link>
       )}
     </div>
+
+    <HeroSearch />
   </>)
 }
 

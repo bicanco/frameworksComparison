@@ -8,6 +8,9 @@ yarn install
 ### Serve
 Run `yarn dev` and navigate to `http://localhost:3000/`.
 
+### Run json server
+Run `yarn run db`. The resources are available at `http://localhost:4000`.
+
 ### Initial Setup
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with the following command:
 ```
@@ -50,3 +53,9 @@ yarn create next-app --ts
 * Refactoring a tightly-coupled master/detail view into a routed detail view;
 * Using `Link` component props to navigate;
 * Using the `useHeroService` hook in multiple components.
+
+### 6. Get Data from a Server
+* Using the `fetch` API to make HTTP requests in the app;
+* Refactoring the `useHeroService` to load heroes from a web API;
+* Extending the `HeroService` to support `post()`, `put()` and `delete()` methods;
+* Updating the components to allow adding, editing and deleting heroes.

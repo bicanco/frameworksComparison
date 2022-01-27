@@ -8,6 +8,9 @@ yarn install
 ### Serve
 Run `ng serve` and navigate to `http://localhost:4200/`.
 
+### Run json server
+Run `yarn run db`. The resources are available at `http://localhost:4000`.
+
 ### Initial Setup
 Project created with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3 using the following commands:
 ```
@@ -53,3 +56,9 @@ ng add @angular-eslint/schematics
 * Refactoring a tightly-coupled master/detail view into a routed detail view;
 * Using router link paramenters to navigate;
 * Using the `HeroService` in multiple components.
+
+### 6. Get Data from a Server
+* Importing the `HttpClientModule` to use HTTP in the app;
+* Refactoring the `HeroService` to load heroes from a web API;
+* Extending the `HeroService` to support `post()`, `put()` and `delete()` methods;
+* Updating the components to allow adding, editing and deleting heroes.
